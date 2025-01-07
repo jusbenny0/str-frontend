@@ -142,7 +142,7 @@ const DashBoard = () => {
         }
 
         try {
-            const response = await fetch(`/api/meals/${selectedMealID}`, {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/meals/${selectedMealID}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
@@ -169,7 +169,7 @@ const DashBoard = () => {
     // se to tady ukalada
     const saveMeal = async (mealData) => {
         try {
-            const response = await fetch("/api/meals/create", {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/meals/create`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -195,7 +195,7 @@ const DashBoard = () => {
     // fetchhovaci funkce na jidla aby tam byli
     const fetchMeals = async () => {
         try {
-            const response = await fetch(`/api/meals/${userID}`, {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/meals/${userID}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -254,7 +254,7 @@ const DashBoard = () => {
 
             const query = `${grams} grams ${food}`;
 
-            const apiUrl = `https://api.calorieninjas.com/v1/nutrition?query=${encodeURIComponent(query)}`;
+            const apiUrl = `https:/import.meta.env.VITE_BACKEND_URL/api.calorieninjas.com/v1/nutrition?query=${encodeURIComponent(query)}`;
 
             const response = await fetch(apiUrl, {
                 method: "GET",
