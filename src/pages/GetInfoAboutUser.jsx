@@ -377,7 +377,7 @@ const GetInfoAboutUser = () => {
                             </button>
                         </div>
                     </div>
-                    <button className={` ${buttonClass} `}
+                    <button className={`w-full bg-black p-4 hover:bg-pink-600 transition-colors duration-300  `}
                         onClick={navigate("/dashboard")}
                     >
                         Pokračovat na Dashboard
