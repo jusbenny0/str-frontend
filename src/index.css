@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* MOJE BARVICKYYYY */
+  --lgr: #505050;
+  /*light gray*/
+  --llgr: #6e6e6e;
+  /*light light gray*/
+  --dgr: #3b3b3b;
+  /*dark gray*/
+  --bgr: #272727;
+  /*background gray*/
+  --lpur: #ba2ae6;
+  /*light purple*/
+  --dpur: #77278f;
+  /*dark purple*/
+  --sbgr: #0e1011;
+  /* sidebar gray */
+  --epr-dark-bg-color: #0e1011;
+}
+
+.mesh-gradient {
+  background-image: linear-gradient(
+    to right,
+    #F012BE,
+    #b46ef2
+  );
+  background-size: 300% 100%;
+  background-position: 0% 0%;
+  transition: background-position 1s ease-in-out;
+}
+
+.mesh-gradient:hover {
+  background-position: 100% 0%;
+}
+
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    #F012BE,
+    #6E71F2
+  );
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  transition: background-position 0.5s ease-in-out;
+  animation: gradientShift 5s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
