@@ -84,6 +84,7 @@ const Profile = () => {
         } catch (error) {
             dispatch(updateUserFailure(error));
             toast.error("something went wrong! please try again.");
+            console.log(error)
         }
     };
 
