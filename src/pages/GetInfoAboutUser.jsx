@@ -377,8 +377,8 @@ const GetInfoAboutUser = () => {
                             </button>
                         </div>
                     </div>
-                    <button className={`w-full bg-black p-4 hover:bg-pink-600 transition-colors duration-300  `}
-                        onClick={navigate("/dashboard")}
+                    <button className={`w-full bg-black text-white font-bold p-4 hover:bg-pink-600 transition-colors duration-300  `}
+                        onClick={() => navigate("/dashboard")}
                     >
                         Pokračovat na Dashboard
                     </button>
