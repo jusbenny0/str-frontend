@@ -59,14 +59,14 @@ export default function SignUp() {
     e.preventDefault();
 
     if (passwordStrength < 4) {
-      setError("Your password is not strong enough.");
-      toast.error("Your password is not strong enough.");
+      setError("Nedostatečně silné heslo!");
+      toast.error("Nedostatečně silné heslo!");
       return;
     }
 
     if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match.");
-      toast.error("Passwords do not match.");
+      setError("Hesla se neshodují.");
+      toast.error("Hesla se neshodují.");
       return;
     }
 
@@ -86,8 +86,8 @@ export default function SignUp() {
       setLoading(false);
 
       if (data.success === false) {
-        setError(data.message || "Something went wrong. Please try again.");
-        toast.error(data.message || "Something went wrong. Please try again.");
+        setError(data.message || "Něco se pokazilo, prosíme zkuste to znovu.");
+        toast.error(data.message || "Něco se pokazilo, prosíme zkuste to znovu.");
         return;
       }
 
@@ -99,8 +99,8 @@ export default function SignUp() {
 
     } catch (error) {
       setLoading(false);
-      setError("Something went wrong. Please try again.");
-      toast.error("Something went wrong. Please try again.");
+      setError("Něco se pokazilo, prosíme zkuste to znovu.");
+      toast.error("Něco se pokazilo, prosíme zkuste to znovu.");
     }
   };
 
@@ -244,7 +244,7 @@ export default function SignUp() {
         </form>
 
         <h3 className="mt-4 text-white flex gap-1">
-          <p>Already Have an Account?{' '}</p>
+          <p>Máte už účet?{' '}</p>
           <Link
             to="/login"
             className="text-[#ff46f3] hover:font-bold transition-all hover:text-[#ba2ae6] text-center w-[70px]"

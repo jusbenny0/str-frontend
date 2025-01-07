@@ -64,7 +64,7 @@ export default function SignIn() {
             <label
               htmlFor="email"
               className="block text-white font-medium mb-1">
-              Email or username
+              Email
             </label>
             <div className="border-gradient">
               <input
@@ -80,7 +80,7 @@ export default function SignIn() {
             <label
               htmlFor="password"
               className="block text-white font-medium mb-1">
-              Password
+              Heslo
             </label>
             <div className="border-gradient">
               <input
@@ -100,19 +100,19 @@ export default function SignIn() {
               disabled={loading}
               className='w-full py-3 text-white rounded-md mesh-gradient transition-all'
             >
-              {loading ? 'Loading...' : 'Sign In'}
+              {loading ? 'Načítám...' : 'Přihlásit se'}
             </button>
             <OAuth />
           </div>
         </form>
 
         <h3 className="text-gray-700 sm:w-full flex flex-row justify-center items-center gap-2 mt-3">
-          <p className="text-white">Don't have an account?{' '}</p>
+          <p className="text-white">Nemáš učet?{' '}</p>
           <Link
             to="/register"
             className="text-black hover:font-bold transition-all hover:text-[#ba2ae6] duration-300 w-[100px] flex justify-center"
           >
-            Registruj se
+            Registruj se!
           </Link>
         </h3>
       </div>

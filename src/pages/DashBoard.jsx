@@ -304,10 +304,8 @@ const DashBoard = () => {
         const handleResize = () => {
             if (window.innerWidth < 640) {
                 setUnder640(true);
-                console.log("Screen width is under 640px");
             } else {
                 setUnder640(false);
-                console.log("Screen width is 640px or above");
             }
         };
 

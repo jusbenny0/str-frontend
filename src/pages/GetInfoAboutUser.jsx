@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux';
 import {
     updateUserFailure,
@@ -10,6 +11,7 @@ import Navbar from '../components/Navbar';
 
 const GetInfoAboutUser = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate()
     const { currentUser } = useSelector((state) => state.user);
 
     const [age, setAge] = useState(currentUser?.age || "");
@@ -254,7 +256,7 @@ const GetInfoAboutUser = () => {
     const selectedButtonClass = "rounded-xl p-2 mesh-gradient w-[70px]";
 
     return (
-        <div className='w-screen min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-pink-400 to-pink-200'>
+        <div className='w-screen min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-pink-400 to-pink-200 overflow-x-hidden'>
             <Navbar />
             <form className="max-w-xl bg-black bg-opacity-60 p-4 rounded-xl mt-[12vh]" onSubmit={handleSubmit}>
                 <h2 className='text-xl font-bold text-white mb-6'>Prosíme vyplňte Váš věk, váhu, výšku, cíl a pohlaví.</h2>
@@ -277,6 +279,7 @@ const GetInfoAboutUser = () => {
                             className={inputClass}
                             min="1"
                             step="1"
+                            value={age}
                         />
                     </div>
                     <div className="flex flex-col">
@@ -297,6 +300,7 @@ const GetInfoAboutUser = () => {
                             className={inputClass}
                             min="1"
                             step="0.1"
+                            value={weight}
                         />
                     </div>
                     <div className="flex flex-col">
@@ -373,6 +377,11 @@ const GetInfoAboutUser = () => {
                             </button>
                         </div>
                     </div>
+                    <button className={` ${buttonClass} `}
+                        onClick={navigate("/dashboard")}
+                    >
+                        Pokračovat na Dashboard
+                    </button>
                 </div>
             </form>
         </div>
