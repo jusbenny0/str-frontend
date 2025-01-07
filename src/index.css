@@ -21,6 +21,10 @@
   --epr-dark-bg-color: #0e1011;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .mesh-gradient {
   background-image: linear-gradient(
     to right,
