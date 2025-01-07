@@ -11,7 +11,7 @@ export default function PrivateRoute() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await fetch('/api/user/verify', {
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/verify`, {
           method: 'GET',
           credentials: 'include', 
         });

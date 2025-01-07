@@ -41,7 +41,7 @@ const GetInfoAboutUser = () => {
         try {
             dispatch(updateUserStart());
 
-            const res = await fetch(`/api/user/update/${currentUser._id}`, {
+            const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/update/${currentUser._id}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -224,7 +224,7 @@ const GetInfoAboutUser = () => {
         try {
             dispatch(updateUserStart());
 
-            const res = await fetch(`/api/user/update/${currentUser._id}`, {
+            const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/update/${currentUser._id}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

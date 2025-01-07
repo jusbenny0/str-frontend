@@ -16,7 +16,7 @@ const Navbar = () => {
 
     const handleSignOut = async () => {
         try {
-            await fetch("/api/auth/signout");
+            await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/signout`);
             dispatch(signOut())
             toast.success("Odhlášení proběhlo úspěšně!")
             navigate("/")
