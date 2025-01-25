@@ -9,38 +9,14 @@ export default function PrivateRoute() {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
 
   useEffect(() => {
-    const checkAuth = async () => {
-      try {
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/verify`, {
-          method: 'GET',
-          credentials: 'include', 
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-          if (data.isValid) {
-            setIsAuthenticated(true);
-            return;
-          }
-        }
-
-        setIsAuthenticated(false);
-        dispatch(signOut());
-      } catch (error) {
-        console.error('Error during token verification:', error);
-        setIsAuthenticated(false);
-        dispatch(signOut());
-      }
-    };
-
     if (currentUser) {
-      checkAuth();
+      setIsAuthenticated(true);
     } else {
       setIsAuthenticated(false);
+      dispatch(signOut());
     }
   }, [currentUser, dispatch]);
 
-  
   if (isAuthenticated === null) return <div>Loading...</div>;
 
   return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
