@@ -254,7 +254,7 @@ const DashBoard = () => {
 
             const query = `${grams} grams ${food}`;
 
-            const apiUrl = `https:/import.meta.env.VITE_BACKEND_URL/api.calorieninjas.com/v1/nutrition?query=${encodeURIComponent(query)}`;
+            const apiUrl = `https://api.calorieninjas.com/v1/nutrition?query=${encodeURIComponent(query)}`;
 
             const response = await fetch(apiUrl, {
                 method: "GET",
